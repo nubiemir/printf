@@ -4,17 +4,18 @@
 #include <stdio.h>
 #include <unistd.h>
 
-typedef struct FormatStack
+typedef struct FormatConversion
 {
-    int top;
-    char **str;
-} Stack;
+    char flag;
+    char *width;
+    char  type;
+} Format;
 
 #define NEW(len) ({                                    \
-    Stack *stack = (Stack *)malloc(sizeof(Stack));     \
-    stack->top = -1;                                   \
-    stack->str = (int *)malloc(len * sizeof(char **)); \
-    stack;                                             \
+    Format *format = (Format *)malloc(sizeof(Format));     \
+    format->flag = 0;                                   \
+    format->str = (int *)malloc(len * sizeof(char **)); \
+    format;                                             \
 })
 
 int ft_printf(const char *ptr, ...);

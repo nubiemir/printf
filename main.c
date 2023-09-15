@@ -2,7 +2,7 @@
 
 int main()
 {
-    // printf("%  d", 12);
+    printf("%.12d", 12);
 
-    ft_printf("Hello World%.ss");
+    //ft_printf("Hello World%.ss");
 }
