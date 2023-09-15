@@ -20,17 +20,8 @@ char *handle_width()
     return ("hello");
 }
 
-Stack *handle_flag(char c, char *str)
+void handle_flag(char c, char *str)
 {
-    Stack *stack;
-    int len;
-
-    if (c == '0' || '.' || '-')
-        len = 3;
-    else
-        len = 2;
-    stack = NEW(len);
-    return (stack);
 }
 
 int ft_printf(const char *ptr, ...)
@@ -50,9 +41,7 @@ int ft_printf(const char *ptr, ...)
         {
             write(1, "\n", 1);
             if (flag_checker(ptr[++counter]))
-            {
-                Stack *stack = handle_flag(ptr[counter], &ptr[counter]);
-            }
+                handle_flag(ptr[counter], &ptr[counter]);
             else if (format_checker(ptr[counter]))
                 printf("format found %c\n", ptr[counter]);
         }
