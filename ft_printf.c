@@ -8,18 +8,27 @@ int format_checker(char c)
     return (0);
 }
 
-char *handle_width()
+int flag_checker(char c)
 {
-    return ("hello");
+    if (c == '#' || c == ' ' || c == '+' || c == '0' || c == '.' || c == '-')
+        return (1);
+    return (0);
+}
+
+int width_parser(char *str, int counter)
+{
+    return (0);
 }
 
 int handle_format(Format *format, char *str, int counter)
 {
-    while (str[counter] != 'u' && str[counter] != 'i' && str[counter] != 'd' && str[counter] != 'x' && str[counter] != 'X' && str[counter] != 'c' && str[counter] != 's' && str[counter] != 'p' && str[counter] != '%')
+    while (format_checker(str[counter]))
     {
-        if (str[counter] == '.' || str[counter] == ' ' || str[counter] == '0' || str[counter] == '-' || str[counter] = '#' || str[counter] == '+')
+        if (flag_checker(str[counter]))
+            format->flag = str[++counter];
+        if (str[counter] >= '1' && str[counter] <= '9')
         {
-            format->flag = str[counter];
+            flag->width = width_parser(str, counter);
         }
         counter++;
     }
