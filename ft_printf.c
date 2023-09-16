@@ -1,9 +1,9 @@
 #include <stdarg.h>
 #include "printf.h"
 
-int width_parser(Format *format, char *str, int counter)
+int width_parser(Format *format, const char *str, int counter)
 {
-    unsinged int    start;
+    unsigned int    start;
     char            *sub;
     int             width;
 
@@ -15,7 +15,7 @@ int width_parser(Format *format, char *str, int counter)
     return (counter);
 }
 
-int handle_format(Format *format, char *str, int counter)
+int handle_format(Format *format, const char *str, int counter)
 {
     while (format_checker(str[counter]))
     {
@@ -27,7 +27,8 @@ int handle_format(Format *format, char *str, int counter)
         if (str[counter] >= '1' && str[counter] <= '9')
             counter+= width_parser(format,str, counter);
     }
-    format->type = str[counter]
+    format->type = str[counter];
+    printf("\nflag: %c\n width: %d\n type: %c\n", format->flag, format->width, format->type);
     return (counter);
 }
 
@@ -46,10 +47,9 @@ int ft_printf(const char *ptr, ...)
     while (ptr[counter])
     {
         if (ptr[counter] != '%')
-            res += write(1, &ptr[counter], 1);
+            res += write(1, &ptr[counter++], 1);
         else
-            i = handle_format(format, ptr, i+1)
-        counter++;
+            counter += handle_format(format, ptr, counter+1);
     }
     return (res);
 }

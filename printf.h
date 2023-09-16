@@ -3,11 +3,11 @@
 
 #include <stdio.h>
 #include <unistd.h>
-
+#include "libft/libft.h"
 typedef struct FormatConversion
 {
     char    flag;
-    char    *width;
+    int     width;
     char    type;
 } Format;
 
