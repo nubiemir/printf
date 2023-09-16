@@ -1,9 +1,18 @@
 #include <stdarg.h>
 #include "printf.h"
 
-int width_parser(char *str, int counter)
+int width_parser(Format *format, char *str, int counter)
 {
-    return (0);
+    unsinged int    start;
+    char            *sub;
+    int             width;
+
+    start = counter;
+    while (!format_checker(str[counter++]))
+    sub = ft_substr(str, start, counter);
+    width = ft_atoi(sub);
+    format->width = width;
+    return (counter);
 }
 
 int handle_format(Format *format, char *str, int counter)
@@ -11,12 +20,12 @@ int handle_format(Format *format, char *str, int counter)
     while (format_checker(str[counter]))
     {
         if (flag_checker(str[counter]))
-            format->flag = str[++counter];
-        if (str[counter] >= '1' && str[counter] <= '9')
         {
-            flag->width = width_parser(str, counter);
+            format->flag = str[++counter];
+            counter++;
         }
-        counter++;
+        if (str[counter] >= '1' && str[counter] <= '9')
+            counter+= width_parser(format,str, counter);
     }
     format->type = str[counter]
     return (counter);
