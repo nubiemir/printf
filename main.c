@@ -2,7 +2,6 @@
 
 int main()
 {
-    printf("%.12d", 12);
-
+    printf("%+012d", 12);
     //ft_printf("Hello World%.ss");
 }
