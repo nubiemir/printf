@@ -4,30 +4,26 @@
 int width_parser(Format *format, const char *str, int counter)
 {
     unsigned int    start;
-    char            *sub;
     int             width;
 
     start = counter;
-    while (!format_checker(str[counter++]))
-    sub = ft_substr(str, start, counter);
-    width = ft_atoi(sub);
+    while (!format_checker(str[start]))
+        start++;
+    width = ft_atoi((str + counter));
     format->width = width;
-    return (counter);
+    return (start);
 }
 
 int handle_format(Format *format, const char *str, int counter)
 {
-    while (format_checker(str[counter]))
+    while (!format_checker(str[counter]))
     {
         if (flag_checker(str[counter]))
-        {
-            format->flag = str[++counter];
-            counter++;
-        }
+            format->flag = str[counter++];
         if (str[counter] >= '1' && str[counter] <= '9')
-            counter+= width_parser(format,str, counter);
+            counter= width_parser(format,str, counter);
     }
-    format->type = str[counter];
+    format->type = str[counter++];
     printf("\nflag: %c\n width: %d\n type: %c\n", format->flag, format->width, format->type);
     return (counter);
 }

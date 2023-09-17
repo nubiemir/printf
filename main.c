@@ -3,5 +3,5 @@
 int main()
 {
     // printf("%+012d", 12);
-    ft_printf("Hello World%.2ss");
+    ft_printf("%.2ss");
 }
