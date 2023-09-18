@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 
-SRCS			=	libft/ft_atoi.c ft_printf.c utils.c main.c
+SRCS			=	libft/ft_atoi.c libft/ft_putchar_fd.c libft/ft_putstr_fd.c ft_printf.c utils.c main.c
 
 OBJS			= $(SRCS:.c=.o)
 
