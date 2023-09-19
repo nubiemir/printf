@@ -6,7 +6,7 @@
 /*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 19:49:24 by famir             #+#    #+#             */
-/*   Updated: 2023/09/19 21:19:23 by famir            ###   ########.fr       */
+/*   Updated: 2023/09/19 21:55:34 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	handle_print(t_format *format, int res, va_list args)
 	if (format->type == 'c')
 		res += ft_print_char(format, va_arg(args, int));
 	if (format->type == 's')
-		res += ft_putstr_fd(va_arg(args, char *), 1);
+		res += ft_print_str(format, va_arg(args, char *));
 	if (format->type == '%')
 		res += ft_putchar_fd(format->type, 1);
 	if (!format_checker(format->type))
