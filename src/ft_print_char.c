@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 19:49:19 by famir             #+#    #+#             */
-/*   Updated: 2023/09/19 19:54:16 by famir            ###   ########.fr       */
+/*   Created: 2023/09/19 21:02:48 by famir             #+#    #+#             */
+/*   Updated: 2023/09/19 21:12:58 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../printf.h"
 
-int	ft_putstr_fd(char *s, int fd)
+int	ft_print_char(t_format *format, char c)
 {
 	int	res;
 
 	res = 0;
-	while (*s)
+	if (format->flag == '-' && format->width > 1)
 	{
-		res += ft_putchar_fd(*s, fd);
-		s++;
+		res += ft_putchar_fd(c, 1);
+		while (res < format->width)
+			res += ft_putchar_fd(' ', 1);
 	}
+	else if (format->flag == 0 && format->width > 1)
+	{
+		while (res <= format->width - 1)
+			res += ft_putchar_fd(' ', 1);
+		res += ft_putchar_fd(c, 1);
+	}
+	else
+		res += ft_putchar_fd(c, 1);
 	return (res);
 }
