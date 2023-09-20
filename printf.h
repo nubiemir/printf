@@ -6,7 +6,7 @@
 /*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 20:06:20 by famir             #+#    #+#             */
-/*   Updated: 2023/09/19 21:56:13 by famir            ###   ########.fr       */
+/*   Updated: 2023/09/20 20:24:45 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	format_initializer(t_format *format);
 int		handle_print(t_format *format, int res, va_list args);
 int		ft_print_char(t_format *format, char c);
 int		ft_print_str(t_format *format, char *str);
+int		ft_print_num(t_format *format, int num);
 
 #endif
