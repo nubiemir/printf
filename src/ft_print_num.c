@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_num.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: famir <famir@student.42abudhabi.ae>        +#+  +:+       +#+        */
+/*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 20:21:10 by famir             #+#    #+#             */
-/*   Updated: 2023/09/20 20:38:22 by famir            ###   ########.fr       */
+/*   Updated: 2023/09/20 21:25:50 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../printf.h"
 
-int	ft_print_num(t_format *format, int num)
+int	ft_print_num(t_format *format, long int num)
 {
 	int		res;
 	char	*str;
 
 	res = 0;
 	str = ft_itoa(num);
-	if (num >= 0 && format->flag == '+')
+	if (num >= 0 && format->flag == '+' && (format->type == 'd'
+			|| format->type == 'i'))
 	{
 		res += ft_putchar_fd(format->flag, 1);
 		res += ft_putstr_fd(str, 1);

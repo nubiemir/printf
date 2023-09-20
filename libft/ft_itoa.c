@@ -6,7 +6,7 @@
 /*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 20:40:36 by famir             #+#    #+#             */
-/*   Updated: 2023/09/19 20:29:01 by famir            ###   ########.fr       */
+/*   Updated: 2023/09/20 21:12:45 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ long int	digit_counter(long int n)
 	return (1 + digit_counter(n / 10));
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long int n)
 {
 	char				*res;
 	unsigned long int	digit_num;

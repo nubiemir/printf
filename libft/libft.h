@@ -27,7 +27,7 @@ typedef struct FormatConversion
 int		ft_atoi(const char *str);
 int		ft_putchar_fd(char c, int fd);
 int		ft_putstr_fd(char *s, int fd);
-char	*ft_itoa(int n);
+char	*ft_itoa(long int n);
 int		ft_strlen(const char *s);
 
 #endif
