@@ -6,13 +6,13 @@
 /*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 20:25:05 by famir             #+#    #+#             */
-/*   Updated: 2023/09/20 21:33:01 by famir            ###   ########.fr       */
+/*   Updated: 2023/09/21 19:50:00 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	main(void)
 {
-	ft_printf("un: %+u", -12);
+	ft_printf("un: %u", -12);
 }

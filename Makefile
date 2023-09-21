@@ -6,7 +6,7 @@
 #    By: famir <famir@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/07 19:38:21 by famir             #+#    #+#              #
-#    Updated: 2023/09/19 22:04:03 by famir            ###   ########.fr        #
+#    Updated: 2023/09/21 19:41:14 by famir            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CC				= cc -g
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
 
-NAME			= printf.a
+NAME			= libftprintf.a
 
 all:			$(NAME)
 

@@ -6,11 +6,11 @@
 /*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 19:49:24 by famir             #+#    #+#             */
-/*   Updated: 2023/09/20 21:28:47 by famir            ###   ########.fr       */
+/*   Updated: 2023/09/21 19:42:55 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	width_parser(t_format *format, const char *str, int counter)
 {

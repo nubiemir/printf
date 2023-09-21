@@ -6,11 +6,11 @@
 /*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 20:21:10 by famir             #+#    #+#             */
-/*   Updated: 2023/09/20 21:25:50 by famir            ###   ########.fr       */
+/*   Updated: 2023/09/21 19:43:44 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 int	ft_print_num(t_format *format, long int num)
 {

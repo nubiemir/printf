@@ -4,7 +4,7 @@
         {
             "type": "shell",
             "label": "build",
-            "command": "make && cc ./printf.a",
+            "command": "make && cc ./libftprintf.a",
             "problemMatcher": "$gcc",
             "detail": "CMake template configure task",
             "group": "build"

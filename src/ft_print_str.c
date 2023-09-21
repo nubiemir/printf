@@ -6,11 +6,11 @@
 /*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 21:25:07 by famir             #+#    #+#             */
-/*   Updated: 2023/09/19 21:59:17 by famir            ###   ########.fr       */
+/*   Updated: 2023/09/21 19:43:54 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 int	ft_print_str(t_format *format, char *str)
 {
