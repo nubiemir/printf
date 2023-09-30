@@ -6,7 +6,7 @@
 /*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 21:00:14 by famir             #+#    #+#             */
-/*   Updated: 2023/09/19 21:02:13 by famir            ###   ########.fr       */
+/*   Updated: 2023/09/22 22:23:28 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,12 @@ int	flag_checker(char c)
 	if (c == '#' || c == ' ' || c == '+' || c == '0' || c == '.' || c == '-')
 		return (1);
 	return (0);
+}
+
+void	safe_free(void **ptr)
+{
+	if (ptr == NULL)
+		return ;
+	free(*ptr);
+	*ptr = NULL;
 }

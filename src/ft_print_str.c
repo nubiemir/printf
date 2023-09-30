@@ -6,7 +6,7 @@
 /*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 21:25:07 by famir             #+#    #+#             */
-/*   Updated: 2023/09/21 19:43:54 by famir            ###   ########.fr       */
+/*   Updated: 2023/09/30 14:43:01 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_print_str(t_format *format, char *str)
 	int	res;
 
 	res = 0;
+	if (!str)
+		str = "(null)";
 	if (format->flag == '-' && format->width > ft_strlen(str))
 	{
 		res += ft_putstr_fd(str, 1);

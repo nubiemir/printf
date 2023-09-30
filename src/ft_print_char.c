@@ -6,7 +6,7 @@
 /*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 21:02:48 by famir             #+#    #+#             */
-/*   Updated: 2023/09/21 19:43:38 by famir            ###   ########.fr       */
+/*   Updated: 2023/09/30 14:33:35 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_print_char(t_format *format, char c)
 	}
 	else if (format->flag == 0 && format->width > 1)
 	{
-		while (res <= format->width - 1)
+		while (res <= format->width - 2)
 			res += ft_putchar_fd(' ', 1);
 		res += ft_putchar_fd(c, 1);
 	}

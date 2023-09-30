@@ -6,7 +6,7 @@
 /*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 19:49:24 by famir             #+#    #+#             */
-/*   Updated: 2023/09/21 19:42:55 by famir            ###   ########.fr       */
+/*   Updated: 2023/09/30 14:54:41 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ int	handle_print(t_format *format, int res, va_list args)
 		res += ft_print_num(format, va_arg(args, int));
 	else if (format->type == 'u')
 		res += ft_print_un(format, va_arg(args, unsigned int));
+	else if (format->type == 'x' || format->type == 'X')
+		res += ft_print_hex(format, va_arg(args, unsigned int));
+	else if (format->type == 'p')
+		res += ft_print_ptr(format, va_arg(args, unsigned long));
 	else if (format->type == '%')
 		res += ft_putchar_fd(format->type, 1);
 	else if (!format_checker(format->type))
@@ -82,6 +86,7 @@ int	ft_printf(const char *ptr, ...)
 			format_initializer(format);
 		}
 	}
+	safe_free((void **)&format);
 	va_end(args);
 	return (res);
 }
