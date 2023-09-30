@@ -6,7 +6,7 @@
 /*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 19:49:24 by famir             #+#    #+#             */
-/*   Updated: 2023/09/30 14:54:41 by famir            ###   ########.fr       */
+/*   Updated: 2023/09/30 20:25:20 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,12 @@ int	handle_print(t_format *format, int res, va_list args)
 	return (res);
 }
 
+void	ft_clean_up(va_list args, t_format *format)
+{
+	safe_free((void **)&format);
+	va_end(args);
+}
+
 int	ft_printf(const char *ptr, ...)
 {
 	va_list			args;
@@ -86,7 +92,6 @@ int	ft_printf(const char *ptr, ...)
 			format_initializer(format);
 		}
 	}
-	safe_free((void **)&format);
-	va_end(args);
+	ft_clean_up(args, format);
 	return (res);
 }

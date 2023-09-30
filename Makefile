@@ -6,7 +6,7 @@
 #    By: famir <famir@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/07 19:38:21 by famir             #+#    #+#              #
-#    Updated: 2023/09/30 14:57:34 by famir            ###   ########.fr        #
+#    Updated: 2023/09/30 21:36:04 by famir            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
-# bonus:			$(NAME)
+bonus:			$(NAME)
 
 clean:
 				$(RM) $(OBJS)

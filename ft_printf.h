@@ -6,7 +6,7 @@
 /*   By: famir <famir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 20:06:20 by famir             #+#    #+#             */
-/*   Updated: 2023/09/30 14:55:01 by famir            ###   ########.fr       */
+/*   Updated: 2023/09/30 20:26:39 by famir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_print_str(t_format *format, char *str);
 int		ft_print_num(t_format *format, long int num);
 int		ft_print_un(t_format *format, unsigned int num);
 int		ft_print_hex(t_format *format, unsigned long num);
-int     ft_print_ptr(t_format *format, unsigned long num);
+int		ft_print_ptr(t_format *format, unsigned long num);
 int		put_hex(t_format *format, unsigned long nbr, int count);
 int		count_hex_digits(unsigned long nbr);
 
